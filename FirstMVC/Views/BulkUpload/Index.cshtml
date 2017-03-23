@@ -1,0 +1,54 @@
+﻿@using ViewModel
+@model FileUploadViewModel
+
+
+@{
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section TitleSection{
+    Bulk Upload
+}
+
+@section HeaderSection{
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script>
+        function ResetForm() {
+            document.getElementById('TxtFName').value = "";
+            document.getElementById('TxtLName').value = "";
+            document.getElementById('TxtSalary').value = "";
+        }
+    </script>
+}
+
+@section ContentBody{
+    <div>
+        <a href="/Employee/Index">Back</a>
+        <form action="/BulkUpload/Upload" method="post" enctype="multipart/form-data">
+            Select File : <input type="file" name="fileUpload" value="" />
+            <input type="submit" name="name" value="Upload" />
+        </form>
+        <div>
+            @Html.ValidationMessage("fileUpload", new { style = "color:red;" })
+            <table border="1">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                </tr>
+                @foreach (EmployeeViewModel item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                        <td> @Html.ValidationMessage(item.RowCount + ".FirstName", new { style = "color:red;" }) </td>
+                        <td> @Html.ValidationMessage(item.RowCount + ".Salary", new { style = "color:red;" }) </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}
+

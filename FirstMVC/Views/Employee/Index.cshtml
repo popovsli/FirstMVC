@@ -1,0 +1,42 @@
+﻿@using ViewModel
+@model EmployeeListViewModel
+
+@*@{
+                 FirstMVC.Models.Employee emp = (FirstMVC.Models.Employee)ViewBag.Employee;
+    }*@
+
+@{
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section TitleSection{
+    MyView
+}
+
+@section ContentBody{
+    <div>
+        <table border="1">
+            <tr>
+                <th>Employee Name</th>
+                <th>Salary</th>
+            </tr>
+            @foreach (EmployeeViewModel item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.EmployeeName</td>
+                    <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                </tr>
+            }
+        </table>
+        @{
+            Html.RenderAction("GetAddNewLink");
+        }
+
+        @{
+            //Html.RenderPartial("Footer", Model.FooterData);
+            //MvcHtmlString result = Html.Partial("Footer", Model.FooterData);
+            //string finalResult = result.ToHtmlString().Replace("2017", "20000");
+        }
+        @*@MvcHtmlString.Create(finalResult)*@
+    </div>
+}
