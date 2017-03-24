@@ -54,6 +54,7 @@ namespace FirstMVC.Controllers
         [HeaderFooterFilter]
         [AdminFilter]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveEmployee(Employee e, string BtnSubmit)
         {
             switch (BtnSubmit)

@@ -11,6 +11,7 @@
         <input type="hidden" name="BtnSubmit" value="Save Employee" />
         Congratulations!! You have won a free pdf of Learn MVC project in 7 days.
         Email : - <input type="text" name="Whatver" value="" />
+        @Html.AntiForgeryToken()
         <input type="submit" name="MyButton" value="Send Link" />
     </form>
 </body>
