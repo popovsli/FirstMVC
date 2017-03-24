@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="../Scripts/angular.js"></script>
+
+    <script>
+        var MyModule = angular.module("MyAngularModule", []);
+
+        MyModule.controller("MyController", function ($scope, $http) {
+            $http.get("/api/Customer").then
+            (
+                function (r) {
+                    $scope.Customer = r.data;
+                }
+            );
+            $scope.UpdateValue = function () {
+                $http.post("/api/Customer", $scope.Customer).then
+                               (
+                                   function (r) {
+                                       $scope.Customer = r.data;
+                                   }
+                               );
+            }
+        });
+
+        //MyModule.controller("MyController2", function ($scope) {
+        //    $scope.CustomerName = "Nikolai Popov";
+        //    $scope.Designation = "Corporate Trainer";
+        //    $scope.UpdateValue = function () {
+        //        $scope.CustomerName = "New Updated Value";
+        //    }
+        //});
+
+    </script>
+
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="MyAngularModule">
+
+    <div ng-controller="MyController">
+
+        <input type="text" ng-model="Customer.CustomerName" />
+
+        <input type="text" ng-model="Customer.Designation" />
+
+        <input type="button" value="Update" ng-click="UpdateValue();" />
+    </div>
+
+    <div ng-controller="MyController2" hidden="hidden">
+        <input type="text" ng-model="CustomerName" />
+
+        <span>{{CustomerName}}</span><br />
+
+        <input type="button" value="Update" ng-click="UpdateValue();" />
+    </div>
+
+</body>
+</html>

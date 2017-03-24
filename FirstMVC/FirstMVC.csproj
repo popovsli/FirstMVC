@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\SPA\Controllers\MainController.cs" />
+    <Compile Include="Areas\SPA\Controllers\SPABulkUploadController.cs" />
     <Compile Include="Areas\SPA\SPAAreaRegistration.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BulkUploadController.cs" />
@@ -223,6 +224,7 @@
     <Content Include="Areas\SPA\Views\Main\AddNewLink.cshtml" />
     <Content Include="Areas\SPA\Views\Main\EmployeeList.cshtml" />
     <Content Include="Areas\SPA\Views\Main\CreateEmployee.cshtml" />
+    <Content Include="Areas\SPA\Views\SPABulkUpload\SpaBulkUpload.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />

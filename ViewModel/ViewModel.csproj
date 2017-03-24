@@ -52,6 +52,7 @@
     <Compile Include="SPA\CreateEmployeeViewModel.cs" />
     <Compile Include="SPA\EmployeeListViewModel.cs" />
     <Compile Include="SPA\EmployeeViewModel.cs" />
+    <Compile Include="SPA\FileUploadViewModel.cs" />
     <Compile Include="SPA\MainViewModel.cs" />
     <Compile Include="UserDetailsViewModel.cs" />
   </ItemGroup>
