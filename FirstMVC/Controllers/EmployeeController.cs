@@ -88,7 +88,6 @@ namespace FirstMVC.Controllers
         }
 
         [ChildActionOnly]
-        [AdminFilter]
         public ActionResult GetAddNewLink()
         {
             if (Convert.ToBoolean(Session["IsAdmin"]))
@@ -99,6 +98,27 @@ namespace FirstMVC.Controllers
             {
                 return new EmptyResult();
             }
+        }
+
+        public ActionResult M1()
+        {
+            TempData["a"] = "Value";
+            //string s = TempData["a"].ToString();  // TempData will be available
+            return RedirectToAction("M2");
+        }
+
+        [HeaderFooterFilter]
+        public ActionResult M2()
+        {
+            //string s = TempData["a"].ToString(); //TempData will be available
+            return View("CreateEmployee", new CreateEmployeeViewModel()); // TempData will be available inside view alsoJ
+        }
+
+        [HeaderFooterFilter]
+        public ActionResult M3()
+       {
+            string s = TempData["a"].ToString();// TempData will be available
+            return View("CreateEmployee", new CreateEmployeeViewModel()); // TempData will be available inside view alsoJ
         }
     }
 }
