@@ -157,6 +157,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomModelBinders\MyEmployeeModelBinder.cs" />
+    <Compile Include="Extensions\CustomHelperMethods.cs" />
     <Compile Include="Filters\AdminFilter.cs" />
     <Compile Include="Filters\EmployeeExceptionFilter.cs" />
     <Compile Include="Filters\HeaderFooterFilter.cs" />
