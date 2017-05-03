@@ -16,6 +16,8 @@ namespace FirstMVC.Controllers
 
         public ActionResult Login()
         {
+            //Chack browser cababilities
+            var browser = Request.Browser;
             return View();
         }
 
