@@ -15,10 +15,12 @@ namespace DataAccessLayer
         //}
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<UserDetails> UserDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().ToTable("TblEmployee");
+            modelBuilder.Entity<UserDetails>().ToTable("TblUserDetails");
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -11,6 +11,7 @@ namespace FirstMVC
             bundles.Add(new ScriptBundle("~/bundles/jqueryValidation").Include(
                "~/Scripts/jquery-{version}.js").Include(
                "~/Scripts/jquery.validate.js").Include(
+               "~/Scripts/jquery.validate.unobtrusive.min.js").Include(
                "~/Scripts/jquery.validate.unobtrusive.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

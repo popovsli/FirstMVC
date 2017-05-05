@@ -1,4 +1,5 @@
 ﻿using BusinessEntities;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace BusinessLayer
             {
                 return UserStatus.NonAuthenticatedUser;
             }
+        }
+
+        public bool UserExists(string userName)
+        {
+            SalesERPDAL salesDal = new SalesERPDAL();
+            return salesDal.UserDetails.Any(x => x.UserName.ToUpper() == userName.ToUpper());
         }
     }
 }

@@ -2,6 +2,7 @@
 using BusinessLayer;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,12 +14,12 @@ namespace FirstMVC.Controllers
     public class AuthenticationController : Controller
     {
         // GET: Authentication
-
         public ActionResult Login()
         {
             //Chack browser cababilities
             var browser = Request.Browser;
             return View();
+           
         }
 
         [HttpPost]
@@ -59,5 +60,29 @@ namespace FirstMVC.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
+        //Remote validation
+        public JsonResult IsUserAvailable(string UserName)
+        {
+            UserDetailsBusinessLayer bol = new UserDetailsBusinessLayer();
+            if (!bol.UserExists(UserName))//!WebSecurity.UserExists(username))
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            string suggestedUID = String.Format(CultureInfo.InvariantCulture,
+            "{0} is not available.", UserName);
+            for (int i = 1; i < 100; i++)
+            {
+                string altCandidate = UserName + i.ToString();
+                if (!bol.UserExists(altCandidate))//!WebSecurity.UserExists(altCandidate))
+                {
+                    suggestedUID = String.Format(CultureInfo.InvariantCulture,
+                    "{0} is not available. Try {1}.", UserName, altCandidate);
+                    break;
+                }
+            }
+            return Json(suggestedUID, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
