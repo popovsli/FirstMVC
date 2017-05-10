@@ -13,7 +13,7 @@ namespace FirstMVC.Controllers
     //[Authorize] //At controller level
     public class EmployeeController : Controller
     {
-        [OutputCache(Duration = 15, Location = System.Web.UI.OutputCacheLocation.Any)]
+        //[OutputCache(Duration = 15, Location = System.Web.UI.OutputCacheLocation.Any)]
         [HeaderFooterFilter]
         //[Authorize] //At Action level
         public ActionResult Index()
@@ -90,7 +90,7 @@ namespace FirstMVC.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 60)]
+        //[OutputCache(Duration = 60)]
         public ActionResult GetAddNewLink()
         {
             if (Convert.ToBoolean(Session["IsAdmin"]))

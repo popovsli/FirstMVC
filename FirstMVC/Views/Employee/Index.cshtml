@@ -13,21 +13,38 @@
     MyView
 }
 
+@section HeaderSection{
+    @*<script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>*@
+
+    @*@Scripts.Render("~/bundles/jqueryValidation")
+    @Styles.Render("~/Content/themes/base/test")*@
+}
+
 @section ContentBody{
-    <div>
-        <table border="1">
-            <tr>
-                <th>Employee Name</th>
-                <th>Salary</th>
-            </tr>
-            @foreach (EmployeeViewModel item in Model.Employees)
-            {
+    <div id="tabs">
+        @*<ul>
+            <li><a href="#tabs-1">Articles 1-10</a></li>
+            <li><a href="#tabs-2">Articles 11-20</a></li>
+        </ul>*@
+        <div id="tabs-1">
+            <table border="1">
                 <tr>
-                    <td>@item.EmployeeName</td>
-                    <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
                 </tr>
-            }
-        </table>
+                @foreach (EmployeeViewModel item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    </tr>
+                }
+            </table>
+        </div>
         @{
             Html.RenderAction("GetAddNewLink");
         }
@@ -35,10 +52,11 @@
         <a href="/Employee/M3" hidden="hidden">M3</a>
 
         @{
-            //Html.RenderPartial("Footer", Model.FooterData);
-            //MvcHtmlString result = Html.Partial("Footer", Model.FooterData);
-            //string finalResult = result.ToHtmlString().Replace("2017", "20000");
+//Html.RenderPartial("Footer", Model.FooterData);
+//MvcHtmlString result = Html.Partial("Footer", Model.FooterData);
+//string finalResult = result.ToHtmlString().Replace("2017", "20000");
         }
         @*@MvcHtmlString.Create(finalResult)*@
     </div>
+
 }

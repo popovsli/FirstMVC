@@ -44,7 +44,7 @@ namespace FirstMVC.Controllers
                     ModelState.AddModelError("CredentialError", "Invalid Username or Password");
                     return View("Login");
                 }
-                FormsAuthentication.SetAuthCookie(userDetails.UserName, false);
+                FormsAuthentication.SetAuthCookie(userDetails.UserName, true);
                 Session["IsAdmin"] = IsAdmin;
                 return RedirectToAction("Index", "Employee");
                 //New Code End

@@ -12,7 +12,7 @@ function IsFirstNameInValid() {
     else { return ""; }
 }
 function IsLastNameInValid() {
-    if (document.getElementById('TxtLName').value.length >= 5) {
+    if (document.getElementById('TxtLName').value.length > 5) {
         return 'Last Name should not contain more than 5 character';
     }
     else { return ""; }

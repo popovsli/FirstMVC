@@ -8,11 +8,16 @@ namespace FirstMVC
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jqueryValidation").Include(
-               "~/Scripts/jquery-{version}.js").Include(
-               "~/Scripts/jquery.validate.js").Include(
-               "~/Scripts/jquery.validate.unobtrusive.min.js").Include(
-               "~/Scripts/jquery.validate.unobtrusive.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryValidation")
+               .Include("~/Scripts/jquery-{version}.js")
+               .Include("~/Scripts/jquery.validate.js")
+               .Include("~/Scripts/jquery.validate.unobtrusive.min.js")
+               .Include("~/Scripts/jquery.validate.unobtrusive.js")
+               .Include("~/Scripts/jquery-{version}.min.js")
+               .Include("~/Scripts/jquery-ui-{version}.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/base/test")
+                .Include("~/Content/themes/base/jquery-ui.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
@@ -29,9 +34,8 @@ namespace FirstMVC
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/bootstrap.css","~/Content/site.css"));
         }
     }
 }
