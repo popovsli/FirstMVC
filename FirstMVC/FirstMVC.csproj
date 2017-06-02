@@ -157,7 +157,11 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomActionResults\CustomResult.cs" />
+    <Compile Include="CustomModelBinders\CustomModelBinder.cs" />
+    <Compile Include="CustomModelBinders\DropDownDateTimeBinder.cs" />
     <Compile Include="CustomModelBinders\MyEmployeeModelBinder.cs" />
+    <Compile Include="CustomRouteHandler\MyCustomRouteHandler.cs" />
+    <Compile Include="CustomViewEngine\MyCustomView.cs" />
     <Compile Include="CustomViewEngine\MyCustomViewEngine.cs" />
     <Compile Include="Extensions\CustomHelperMethods.cs" />
     <Compile Include="Filters\AdminFilter.cs" />

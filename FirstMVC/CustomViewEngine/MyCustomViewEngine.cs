@@ -13,7 +13,7 @@ namespace FirstMVC.CustomViewEngine
             this.ViewLocationFormats = new string[]
             { "~/Views/{1}/{2}.mytheme ", "~/Views/Shared/{2}.mytheme" };
             this.PartialViewLocationFormats = new string[]
-            { "~/Views/{1}/{2}.mytheme ", "~/Views/Shared/{2}. mytheme " };
+            { "~/Views/{1}/{2}.mytheme ", "~/Views/Shared/{2}.mytheme " };
         }
         protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
         {
