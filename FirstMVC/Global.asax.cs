@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using FirstMVC.CustomViewEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace FirstMVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ViewEngines.Engines.Add(new MyCustomViewEngine());
             BundleTable.EnableOptimizations = true;
         }
     }

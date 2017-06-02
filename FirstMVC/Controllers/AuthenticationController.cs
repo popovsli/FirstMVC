@@ -1,9 +1,11 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
+using FirstMVC.Filters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -18,11 +20,14 @@ namespace FirstMVC.Controllers
         {
             //Chack browser cababilities
             var browser = Request.Browser;
+
+            CultureInfo uiCulture = Thread.CurrentThread.CurrentUICulture;
             return View();
-           
         }
 
         [HttpPost]
+        //Използва се когато binding model-а е weakly-typed за да се намапне от view -то към параметрите на метода
+        //public ActionResult DoLogin([Bind(Prefix="user")]UserDetails userDetails) 
         public ActionResult DoLogin(UserDetails userDetails)
         {
             if (ModelState.IsValid)
@@ -54,13 +59,12 @@ namespace FirstMVC.Controllers
                 return View("Login");
             }
         }
-        
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-
         //Remote validation
         public JsonResult IsUserAvailable(string UserName)
         {

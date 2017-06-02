@@ -156,7 +156,9 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomActionResults\CustomResult.cs" />
     <Compile Include="CustomModelBinders\MyEmployeeModelBinder.cs" />
+    <Compile Include="CustomViewEngine\MyCustomViewEngine.cs" />
     <Compile Include="Extensions\CustomHelperMethods.cs" />
     <Compile Include="Filters\AdminFilter.cs" />
     <Compile Include="Filters\EmployeeExceptionFilter.cs" />
@@ -270,7 +272,6 @@
     <Folder Include="Areas\SPA\Views\Shared\" />
     <Folder Include="Views\Employee\DisplayTemplates\" />
     <Folder Include="Views\Employee\EditorTemplates\" />
-    <Folder Include="Views\Error\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
