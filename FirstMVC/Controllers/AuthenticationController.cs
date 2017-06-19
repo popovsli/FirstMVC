@@ -88,5 +88,20 @@ namespace FirstMVC.Controllers
             return Json(suggestedUID, JsonRequestBehavior.AllowGet);
         }
 
+       
+        public void Authenticate(string uname, string pass)
+        {
+            //User user = dbContext.Users.First(x => x.UserName.Equals(uname();
+            //if (user != null && user.Password.Equals(EncryptHash(pass))
+            //{
+            //    FormsAuthentication.SetAuthCookie(uname, false);
+            //    RedirectToAction("Main", "DashBoard");
+            //}
+            //// unable to login
+            //RenderView("Index", new LoginViewData
+            //{
+            //    ErrorMessage = "Invalid credentials."
+            //});
+        }
     }
 }

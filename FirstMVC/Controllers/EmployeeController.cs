@@ -4,6 +4,7 @@ using FirstMVC.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using ViewModel;
@@ -18,8 +19,10 @@ namespace FirstMVC.Controllers
         //[Authorize] //At Action level
         public ActionResult Index()
         {
+            IPrincipal usr = System.Web.HttpContext.Current.User;
+
             EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();
-            
+
             EmployeeBusinessLayer empBal = new EmployeeBusinessLayer();
             List<Employee> employees = empBal.GetEmployees();
 
@@ -47,6 +50,8 @@ namespace FirstMVC.Controllers
 
         [AdminFilter]
         [HeaderFooterFilter]
+        //Всички грешки от типа се визуализират от View
+        //[HandleError(ExceptionType = typeof(System.IOException), View = "FileError")] 
         public ActionResult CreateEmployee()
         {
             return View("CreateEmployee", new CreateEmployeeViewModel());
@@ -103,6 +108,24 @@ namespace FirstMVC.Controllers
             }
         }
 
+        protected override void OnException(ExceptionContext exceptionContext)
+        {
+            if (exceptionContext.IsChildAction)
+            {
+                //we don't want to display the error screen if it is a child action,
+                base.OnException(exceptionContext);
+                return;
+            }
+            // log the exception in your configured logger
+            //Logger.Log(exceptionContext.Exception);
+            //handle when the app is not configured to use the custom error path
+            if (!exceptionContext.HttpContext.IsCustomErrorEnabled)
+            {
+                exceptionContext.ExceptionHandled = true;
+                this.View("ErrorManager").ExecuteResult(this.ControllerContext);
+            }
+        }
+
         public ActionResult M1()
         {
             TempData["a"] = "Value";
@@ -119,9 +142,12 @@ namespace FirstMVC.Controllers
 
         [HeaderFooterFilter]
         public ActionResult M3()
-       {
+        {
             string s = TempData["a"].ToString();// TempData will be available
             return View("CreateEmployee", new CreateEmployeeViewModel()); // TempData will be available inside view alsoJ
         }
+
+
+
     }
 }

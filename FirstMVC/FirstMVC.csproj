@@ -155,6 +155,7 @@
     <Compile Include="Controllers\BulkUploadController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ErrorManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomActionResults\CustomResult.cs" />
     <Compile Include="CustomModelBinders\CustomModelBinder.cs" />
@@ -276,6 +277,7 @@
     <Folder Include="Areas\SPA\Views\Shared\" />
     <Folder Include="Views\Employee\DisplayTemplates\" />
     <Folder Include="Views\Employee\EditorTemplates\" />
+    <Folder Include="Views\ErrorManager\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>

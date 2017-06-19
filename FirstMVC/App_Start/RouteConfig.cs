@@ -16,10 +16,10 @@ namespace FirstMVC
             routes.MapMvcAttributeRoutes();
 
             //Register custom route handler
-            routes.MapRoute(
-                name: "Home",
-               url: "{controller}/{action}",
-               defaults: new{controller = "Home",action = "Index"}).RouteHandler = new MyCustomRouteHandler();
+            //routes.MapRoute(
+            //    name: "Home",
+            //   url: "{controller}/{action}",
+            //   defaults: new{controller = "Home",action = "Index"}).RouteHandler = new MyCustomRouteHandler();
 
             routes.MapRoute(
                 name: "Upload",
