@@ -18,7 +18,10 @@ namespace FirstMVC
             //    ExceptionType = typeof(ArgumentNullException)
             //}); 
 
-            filters.Add(new AuthorizeAttribute());//Set autjentication globaly for hole app
+            //Set autjentication globaly for hole app
+            filters.Add(new AuthorizeAttribute());
+            //Set globaly required HTTPS 
+            //filters.Add(new RequireHttpsAttribute());
         }
     }
 }

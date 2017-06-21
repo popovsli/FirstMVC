@@ -49,8 +49,13 @@ namespace FirstMVC.Controllers
                     ModelState.AddModelError("CredentialError", "Invalid Username or Password");
                     return View("Login");
                 }
-                FormsAuthentication.SetAuthCookie(userDetails.UserName, true);
-                Session["IsAdmin"] = IsAdmin;
+                //FormsAuthentication.SetAuthCookie(userDetails.UserName, true);
+
+                string sessionID = Guid.NewGuid().ToString();
+
+                Session.Add(sessionID, IsAdmin);
+                CreatingFormsAuthentication(userDetails, sessionID);
+
                 return RedirectToAction("Index", "Employee");
                 //New Code End
             }
@@ -60,11 +65,32 @@ namespace FirstMVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Creating authorization cookies, this method is as SetAuthCookie()
+        /// </summary>
+        /// <param name="userDetails"></param>
+        /// <param name="sessionID"></param>
+        private void CreatingFormsAuthentication(UserDetails userDetails, string sessionID)
+        {
+            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
+            1,
+            userDetails.UserName,
+            DateTime.Now,
+            DateTime.Now.AddDays(90),
+            true,
+            sessionID);
+
+            string encTicket = FormsAuthentication.Encrypt(authTicket);
+            HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket); //FormsAuthentication.FormsCookieName
+            System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
         //Remote validation
         public JsonResult IsUserAvailable(string UserName)
         {
@@ -88,7 +114,6 @@ namespace FirstMVC.Controllers
             return Json(suggestedUID, JsonRequestBehavior.AllowGet);
         }
 
-       
         public void Authenticate(string uname, string pass)
         {
             //User user = dbContext.Users.First(x => x.UserName.Equals(uname();

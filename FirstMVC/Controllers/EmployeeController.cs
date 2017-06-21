@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using ViewModel;
 
 namespace FirstMVC.Controllers
@@ -20,6 +22,17 @@ namespace FirstMVC.Controllers
         public ActionResult Index()
         {
             IPrincipal usr = System.Web.HttpContext.Current.User;
+
+            //Get user Identity this work when using Windows authentication
+            WindowsIdentity userIdentity = WindowsIdentity.GetCurrent();
+
+            bool isAuthentication = Thread.CurrentPrincipal.Identity.IsAuthenticated;
+            bool isAuthentication2 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+
+            //Get user FormIdentity this work when using Form authentication
+            FormsIdentity formIdentity = System.Web.HttpContext.Current.User.Identity as FormsIdentity;
+            //Get data from session
+            var session = this.Session[formIdentity.Ticket.UserData];
 
             EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();
 
@@ -46,6 +59,18 @@ namespace FirstMVC.Controllers
             employeeListViewModel.Employees = empViewModels;
 
             return View("Index", employeeListViewModel);
+        }
+
+        private void CheckUserRole()
+        {
+            string[] rolesForContentArray = new string[] { "test", "test2" };
+            string[] userRolesArray = Roles.GetRolesForUser();
+            //Get saved roles for View
+            //string[] rolesForContentArray = DbContext.GetRolesForViewFromDb(thisViewName); 
+            if (userRolesArray.Intersect(rolesForContentArray).Count() > 0)
+            {
+                // The user is authorized
+            }
         }
 
         [AdminFilter]
