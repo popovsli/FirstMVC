@@ -6,6 +6,7 @@ using System.Web;
 
 namespace BusinessEntities
 {
+    [Serializable]
     public class UserDetails
     {
         [Key]

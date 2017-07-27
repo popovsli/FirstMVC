@@ -6,6 +6,12 @@
     Layout = null;
 }
 
+@{
+/* C# comment. */
+// Another C# comment.
+}
+<!-- HTML comment -->
+
 <!DOCTYPE html>
 
 <html>
@@ -33,12 +39,10 @@
 
             @Html.LabelFor(c => c.Password)
             @Html.PasswordFor(x => x.Password, new { @placeholder = "Password" })
-
             <br />
 
             @Html.Submit("Login")
             @*<input type="submit" name="BtnSubmit" value="Login" />*@
-
         }
 
     </div>

@@ -119,6 +119,18 @@ namespace FirstMVC.Controllers
             return new EmptyResult();
         }
 
+        /// <summary>
+        /// Encoding data before save in database,ensuring exclude runnable code
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public ActionResult Create(string message)
+        {
+            var newEntry = new UserDetails();
+            newEntry.UserName = Server.HtmlEncode(message);
+            return View();
+        }
+
         [ChildActionOnly]
         //[OutputCache(Duration = 60)]
         public ActionResult GetAddNewLink()

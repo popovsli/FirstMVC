@@ -1,10 +1,13 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
+using FirstMVC.Cryptography;
 using FirstMVC.Filters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -56,6 +59,9 @@ namespace FirstMVC.Controllers
                 Session.Add(sessionID, IsAdmin);
                 CreatingFormsAuthentication(userDetails, sessionID);
 
+                RijndaelAlgorithm crypter = new RijndaelAlgorithm(userDetails);
+                crypter.EncryptData();
+
                 return RedirectToAction("Index", "Employee");
                 //New Code End
             }
@@ -64,7 +70,7 @@ namespace FirstMVC.Controllers
                 return View("Login");
             }
         }
-
+               
         /// <summary>
         /// Creating authorization cookies, this method is as SetAuthCookie()
         /// </summary>
@@ -84,7 +90,7 @@ namespace FirstMVC.Controllers
             HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket); //FormsAuthentication.FormsCookieName
             System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
         }
-
+      
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
