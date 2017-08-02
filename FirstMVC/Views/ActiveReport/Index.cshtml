@@ -1,0 +1,64 @@
+﻿
+@section TitleSection{
+    ActiveReports
+}
+
+@section HeaderSection{
+
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/knockout-2.3.0.js"></script>
+        <script src="~/Scripts/GrapeCity.ActiveReports.Viewer.Html.js"></script>
+        <script src="~/Scripts/bootstrap-3.0.0.js"></script>
+        @Styles.Render("~/Content/GrapeCity.ActiveReports.Viewer.Html")*@
+
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap-3.0.0.js"></script>
+    <script src="../Scripts/knockout-2.3.0.js"></script>
+    <script src="../Scripts/GrapeCity.ActiveReports.Viewer.Html.js"></script>
+
+    <link href="../Content/bootstrap.css" rel="stylesheet">
+    <link href="../Content/GrapeCity.ActiveReports.Viewer.Html.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        //var viewer = GrapeCity.ActiveReports.Viewer({
+        //    element: '#viewer',
+        //    reportService: {
+        //        url: 'ActiveReports.ReportService.asmx'
+        //    },
+        //    uiType: 'desktop',
+        //    reportLoaded: function () {
+        //        reportsButtons.prop('disabled', false);
+        //    },
+        //    documentLoaded: function () {
+        //        console.log(viewer.pageCount);
+        //    },
+        //    error: function (error) {
+        //        console.log("error");
+        //    }
+        //});
+
+        $(function () {
+            var viewer = GrapeCity.ActiveReports.Viewer(
+            {
+                element: '#viewer',
+                report: {
+                    id: "OutletActiveReports.rdlx"
+                },
+                reportService: {
+                    
+                    url: '../ActiveReports.ReportService.asmx'
+                },
+                uiType: 'desktop'
+
+            });
+        });
+
+    </script>
+
+}
+
+@section ContentBody{
+
+    <div id="viewer" style="width:800px;height:600px;"></div>
+
+}

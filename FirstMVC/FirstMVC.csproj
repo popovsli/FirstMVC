@@ -44,6 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GrapeCity.ActiveReports.Chart.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Diagnostics.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Document.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Html.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Image.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Pdf.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Extensibility.v11" />
+    <Reference Include="GrapeCity.ActiveReports.v11" />
+    <Reference Include="GrapeCity.ActiveReports.Web.v11" />
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -134,6 +143,11 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -147,34 +161,37 @@
     <Compile Include="Areas\SPA\Controllers\MainController.cs" />
     <Compile Include="Areas\SPA\Controllers\SPABulkUploadController.cs" />
     <Compile Include="Areas\SPA\SPAAreaRegistration.cs" />
+    <Compile Include="Controllers\ActiveReportController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BulkUploadController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ErrorManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Cryptography\Hashing.cs" />
-    <Compile Include="Cryptography\RijndaelAlgorithm.cs" />
-    <Compile Include="CustomActionResults\CustomResult.cs" />
-    <Compile Include="CustomModelBinders\CustomModelBinder.cs" />
-    <Compile Include="CustomModelBinders\DropDownDateTimeBinder.cs" />
-    <Compile Include="CustomModelBinders\MyEmployeeModelBinder.cs" />
-    <Compile Include="CustomRouteHandler\MyCustomRouteHandler.cs" />
-    <Compile Include="CustomViewEngine\MyCustomView.cs" />
-    <Compile Include="CustomViewEngine\MyCustomViewEngine.cs" />
-    <Compile Include="Extensions\CustomHelperMethods.cs" />
-    <Compile Include="Filters\AdminFilter.cs" />
-    <Compile Include="Filters\EmployeeExceptionFilter.cs" />
-    <Compile Include="Filters\HeaderFooterFilter.cs" />
+    <Compile Include="Utils\Cryptography\Hashing.cs" />
+    <Compile Include="Utils\Cryptography\RijndaelAlgorithm.cs" />
+    <Compile Include="Utils\CustomActionResults\CustomResult.cs" />
+    <Compile Include="Utils\CustomModelBinders\CustomModelBinder.cs" />
+    <Compile Include="Utils\CustomModelBinders\DropDownDateTimeBinder.cs" />
+    <Compile Include="Utils\CustomModelBinders\MyEmployeeModelBinder.cs" />
+    <Compile Include="Utils\CustomRouteHandler\MyCustomRouteHandler.cs" />
+    <Compile Include="Utils\CustomViewEngine\MyCustomView.cs" />
+    <Compile Include="Utils\CustomViewEngine\MyCustomViewEngine.cs" />
+    <Compile Include="Utils\Extensions\CustomHelperMethods.cs" />
+    <Compile Include="Utils\Filters\AdminFilter.cs" />
+    <Compile Include="Utils\Filters\EmployeeExceptionFilter.cs" />
+    <Compile Include="Utils\Filters\HeaderFooterFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logger\FileLogger.cs" />
+    <Compile Include="Utils\Logger\FileLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActiveReports.ReportService.asmx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\GrapeCity.ActiveReports.Viewer.Html.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -220,6 +237,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-3.0.0.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -231,8 +249,11 @@
     <Content Include="Areas\SPA\Views\Main\EmployeeList.cshtml" />
     <Content Include="Areas\SPA\Views\Main\CreateEmployee.cshtml" />
     <Content Include="Areas\SPA\Views\SPABulkUpload\SpaBulkUpload.cshtml" />
+    <Content Include="Reports\OutletActiveReports.rdlx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
+    <Content Include="Scripts\GrapeCity.ActiveReports.Viewer.Html.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
@@ -243,6 +264,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -269,6 +291,7 @@
     <Content Include="Views\Employee\AddNewLink.cshtml" />
     <Content Include="Views\Shared\MyLayout.cshtml" />
     <Content Include="Views\BulkUpload\Index.cshtml" />
+    <Content Include="Views\ActiveReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

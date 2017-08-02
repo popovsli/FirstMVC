@@ -32,7 +32,9 @@ namespace FirstMVC.Controllers
             //Get user FormIdentity this work when using Form authentication
             FormsIdentity formIdentity = System.Web.HttpContext.Current.User.Identity as FormsIdentity;
             //Get data from session
-            var session = this.Session[formIdentity.Ticket.UserData];
+            object isAdmin = this.Session[formIdentity.Ticket.UserData];
+
+            if(isAdmin == null) return RedirectToAction("Login","Authentication");
 
             EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();
 
@@ -135,7 +137,11 @@ namespace FirstMVC.Controllers
         //[OutputCache(Duration = 60)]
         public ActionResult GetAddNewLink()
         {
-            if (Convert.ToBoolean(Session["IsAdmin"]))
+            //Get user FormIdentity this work when using Form authentication
+            FormsIdentity formIdentity = System.Web.HttpContext.Current.User.Identity as FormsIdentity;
+            //Get data from session
+            object isAdmin = this.Session[formIdentity.Ticket.UserData];
+            if (Convert.ToBoolean(isAdmin))
             {
                 return PartialView("AddNewLink");
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace FirstMVC.Filters
 {
@@ -10,7 +11,8 @@ namespace FirstMVC.Filters
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (!Convert.ToBoolean(filterContext.HttpContext.Session["IsAdmin"]))
+            FormsIdentity formIdentity = System.Web.HttpContext.Current.User.Identity as FormsIdentity;
+            if (!Convert.ToBoolean(filterContext.HttpContext.Session[formIdentity.Ticket.UserData]))
             {
                 filterContext.Result = new ContentResult()
                 {
