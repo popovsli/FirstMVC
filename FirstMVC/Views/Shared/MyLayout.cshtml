@@ -5,19 +5,19 @@
 
 <html>
 <head>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+
     <meta name="viewport" content="width=device-width" />
     <title>@RenderSection("TitleSection")</title>
     @RenderSection("HeaderSection", false)
 </head>
 <body>
-    <div style="text-align:right">
-        Hello, @Model.UserName
-        <a href="/Authentication/Logout">Logout</a>
-    </div>
+    @Html.Partial("Header", Model.HeaderData)
     <hr />
-    <div>
-        @RenderSection("ContentBody")
-    </div>
+    <main>
+            @RenderSection("ContentBody")
+    </main>
     @Html.Partial("Footer", Model.FooterData)
 </body>
 </html>

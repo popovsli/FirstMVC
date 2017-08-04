@@ -16,8 +16,9 @@
     <script src="../Scripts/knockout-2.3.0.js"></script>
     <script src="../Scripts/GrapeCity.ActiveReports.Viewer.Html.js"></script>
 
-    <link href="../Content/bootstrap.css" rel="stylesheet">
-    <link href="../Content/GrapeCity.ActiveReports.Viewer.Html.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/GrapeCity.ActiveReports.Viewer.Html.css" rel="stylesheet">
+    <link href="~/Content/theme-cosmo.css" rel="stylesheet">
 
     <script type="text/javascript">
         //var viewer = GrapeCity.ActiveReports.Viewer({
@@ -37,20 +38,34 @@
         //    }
         //});
 
+
         $(function () {
             var viewer = GrapeCity.ActiveReports.Viewer(
             {
                 element: '#viewer',
                 report: {
-                    id: "OutletActiveReports.rdlx"
+                    id: "Reports/VODITE.rdlx",
                 },
                 reportService: {
-                    
                     url: '../ActiveReports.ReportService.asmx'
                 },
+                documentLoaded: function () {
+                    console.log(viewer.pageCount);
+                },
                 uiType: 'desktop'
-
             });
+
+            $('#Param').on('input', function () {
+                var outletID = $("#Param").val();
+                console.log(outletID);
+
+                var reportOption = {
+                    id: 'Reports/VODITE.rdlx',
+                    parameters: [{ name: 'OutletID', value: outletID }]
+                };
+
+                viewer.option("report", reportOption);
+            })
         });
 
     </script>
@@ -59,6 +74,9 @@
 
 @section ContentBody{
 
-    <div id="viewer" style="width:800px;height:600px;"></div>
-
+    <input type="number" id="Param" name="Param" value="" />
+    <div class="container">
+        <div id="paginator" class="pagination"></div>
+        <div id="viewer" style="width: 100%; height: 600px"></div>
+    </div>
 }

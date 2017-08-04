@@ -192,6 +192,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GrapeCity.ActiveReports.Viewer.Html.css" />
+    <Content Include="Content\theme-cosmo.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -250,9 +251,14 @@
     <Content Include="Areas\SPA\Views\Main\CreateEmployee.cshtml" />
     <Content Include="Areas\SPA\Views\SPABulkUpload\SpaBulkUpload.cshtml" />
     <Content Include="Reports\OutletActiveReports.rdlx" />
+    <Content Include="Reports\OutletIDParam.rdlx" />
+    <Content Include="Reports\SpecialDeal.rdsx" />
+    <Content Include="Reports\OutletIDParamNew.rdlx" />
+    <Content Include="Reports\VODITE.rdlx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.12.4-vsdoc.js" />
     <Content Include="Scripts\GrapeCity.ActiveReports.Viewer.Html.js" />
+    <Content Include="Scripts\HTML5  Viewer\Localeuri.txt" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -292,6 +298,7 @@
     <Content Include="Views\Shared\MyLayout.cshtml" />
     <Content Include="Views\BulkUpload\Index.cshtml" />
     <Content Include="Views\ActiveReport\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

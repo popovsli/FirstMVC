@@ -1,6 +1,7 @@
-﻿<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
 	<Body>
-		<Height>3.333334in</Height>
+		<Height>3.307087in</Height>
 		<ReportItems>
 			<Table Name="Table1">
 				<Header>
@@ -12,7 +13,7 @@
 									<ReportItems>
 										<Textbox Name="TextBox1">
 											<CanGrow>true</CanGrow>
-											<Value>OutletID</Value>
+											<Value>Code</Value>
 											<Style>
 												<BackgroundColor>DeepSkyBlue</BackgroundColor>
 												<PaddingBottom>2pt</PaddingBottom>
@@ -28,21 +29,6 @@
 										<Textbox Name="TextBox2">
 											<CanGrow>true</CanGrow>
 											<Value>Name</Value>
-											<Style>
-												<BackgroundColor>DeepSkyBlue</BackgroundColor>
-												<PaddingBottom>2pt</PaddingBottom>
-												<PaddingLeft>2pt</PaddingLeft>
-												<PaddingRight>2pt</PaddingRight>
-												<PaddingTop>2pt</PaddingTop>
-											</Style>
-										</Textbox>
-									</ReportItems>
-								</TableCell>
-								<TableCell>
-									<ReportItems>
-										<Textbox Name="TextBox3">
-											<CanGrow>true</CanGrow>
-											<Value>Mobile</Value>
 											<Style>
 												<BackgroundColor>DeepSkyBlue</BackgroundColor>
 												<PaddingBottom>2pt</PaddingBottom>
@@ -71,7 +57,7 @@
 									<ReportItems>
 										<Textbox Name="TextBox4">
 											<CanGrow>true</CanGrow>
-											<Value>=Fields!OutletID.Value</Value>
+											<Value>=Fields!RBDCODE.Value</Value>
 											<Style>
 												<PaddingBottom>2pt</PaddingBottom>
 												<PaddingLeft>2pt</PaddingLeft>
@@ -86,21 +72,7 @@
 									<ReportItems>
 										<Textbox Name="TextBox5">
 											<CanGrow>true</CanGrow>
-											<Value>=Fields!Name.Value</Value>
-											<Style>
-												<PaddingBottom>2pt</PaddingBottom>
-												<PaddingLeft>2pt</PaddingLeft>
-												<PaddingRight>2pt</PaddingRight>
-												<PaddingTop>2pt</PaddingTop>
-											</Style>
-										</Textbox>
-									</ReportItems>
-								</TableCell>
-								<TableCell>
-									<ReportItems>
-										<Textbox Name="TextBox6">
-											<CanGrow>true</CanGrow>
-											<Value>=Fields!Mobile.Value</Value>
+											<Value>=Fields!NAME.Value</Value>
 											<Style>
 												<PaddingBottom>2pt</PaddingBottom>
 												<PaddingLeft>2pt</PaddingLeft>
@@ -147,20 +119,6 @@
 										</Textbox>
 									</ReportItems>
 								</TableCell>
-								<TableCell>
-									<ReportItems>
-										<Textbox Name="TextBox9">
-											<CanGrow>true</CanGrow>
-											<Value />
-											<Style>
-												<PaddingBottom>2pt</PaddingBottom>
-												<PaddingLeft>2pt</PaddingLeft>
-												<PaddingRight>2pt</PaddingRight>
-												<PaddingTop>2pt</PaddingTop>
-											</Style>
-										</Textbox>
-									</ReportItems>
-								</TableCell>
 							</TableCells>
 						</TableRow>
 					</TableRows>
@@ -173,10 +131,7 @@
 						<Width>1.791667in</Width>
 					</TableColumn>
 					<TableColumn>
-						<Width>1.5in</Width>
-					</TableColumn>
-					<TableColumn>
-						<Width>2.25in</Width>
+						<Width>4.251968in</Width>
 					</TableColumn>
 				</TableColumns>
 				<TableGroups>
@@ -190,174 +145,46 @@
 					</TableGroup>
 				</TableGroups>
 				<Top>1in</Top>
-				<Width>5.541667in</Width>
+				<Width>6.043635in</Width>
 			</Table>
-			<CheckBox Name="CheckBox1">
-				<Height>0.25in</Height>
-				<Left>3.375in</Left>
-				<Style>
-					<PaddingBottom>2pt</PaddingBottom>
-					<PaddingLeft>2pt</PaddingLeft>
-					<PaddingRight>2pt</PaddingRight>
-					<PaddingTop>2pt</PaddingTop>
-				</Style>
-				<Top>0.375in</Top>
-				<Checked>True</Checked>
-				<Text />
-				<Width>1in</Width>
-				<ZIndex>3</ZIndex>
-			</CheckBox>
 		</ReportItems>
 		<Style />
 	</Body>
 	<BottomMargin>1in</BottomMargin>
 	<LeftMargin>1in</LeftMargin>
-	<PageHeight>11in</PageHeight>
-	<PageWidth>8.5in</PageWidth>
+	<PageHeight>21.6cm</PageHeight>
+	<PageWidth>27.9cm</PageWidth>
 	<RightMargin>1in</RightMargin>
 	<TopMargin>1in</TopMargin>
-	<Width>6.75in</Width>
-	<ReportParameters>
-		<ReportParameter Name="ReportParameter1">
-			<AllowBlank>true</AllowBlank>
-			<DataType>String</DataType>
-			<Nullable>true</Nullable>
-			<Prompt>ReportParameter1</Prompt>
-			<ValidValues>
-				<DataSetReference>
-					<DataSetName>DataSet1</DataSetName>
-					<LabelField>Name</LabelField>
-					<ValueField>Name</ValueField>
-				</DataSetReference>
-			</ValidValues>
-			<DefaultValue>
-				<Values>
-					<Value>Меркури М</Value>
-				</Values>
-			</DefaultValue>
-		</ReportParameter>
-	</ReportParameters>
+	<Width>8.188976in</Width>
 	<DataSources>
 		<DataSource Name="DataSource1">
 			<ConnectionProperties>
-				<ConnectString>password=sd;data source=tlsql2014;initial catalog=SpecialDeals;user id=sd;</ConnectString>
-				<DataProvider>SQL</DataProvider>
+				<ConnectString>User Id=giswmr;Password=giswmr;Data Source=GISWMR;</ConnectString>
+				<DataProvider>ORACLE</DataProvider>
 			</ConnectionProperties>
 		</DataSource>
 	</DataSources>
 	<DataSets>
 		<DataSet Name="DataSet1">
 			<Fields>
-				<Field Name="OutletID">
-					<DataField>OutletID</DataField>
+				<Field Name="RBDCODE">
+					<DataField>RBDCODE</DataField>
 				</Field>
-				<Field Name="CustomerID">
-					<DataField>CustomerID</DataField>
-				</Field>
-				<Field Name="Name">
-					<DataField>Name</DataField>
-				</Field>
-				<Field Name="City">
-					<DataField>City</DataField>
-				</Field>
-				<Field Name="PostalCode">
-					<DataField>PostalCode</DataField>
-				</Field>
-				<Field Name="Street">
-					<DataField>Street</DataField>
-				</Field>
-				<Field Name="StreetNumber">
-					<DataField>StreetNumber</DataField>
-				</Field>
-				<Field Name="HousingComplex">
-					<DataField>HousingComplex</DataField>
-				</Field>
-				<Field Name="Building">
-					<DataField>Building</DataField>
-				</Field>
-				<Field Name="Entrance">
-					<DataField>Entrance</DataField>
-				</Field>
-				<Field Name="Floor">
-					<DataField>Floor</DataField>
-				</Field>
-				<Field Name="State">
-					<DataField>State</DataField>
-				</Field>
-				<Field Name="CompositeAddress">
-					<DataField>CompositeAddress</DataField>
-				</Field>
-				<Field Name="Phone">
-					<DataField>Phone</DataField>
-				</Field>
-				<Field Name="Mobile">
-					<DataField>Mobile</DataField>
-				</Field>
-				<Field Name="Email">
-					<DataField>Email</DataField>
-				</Field>
-				<Field Name="Web">
-					<DataField>Web</DataField>
-				</Field>
-				<Field Name="Latitude">
-					<DataField>Latitude</DataField>
-				</Field>
-				<Field Name="Longitude">
-					<DataField>Longitude</DataField>
-				</Field>
-				<Field Name="PrimaryDistributorID">
-					<DataField>PrimaryDistributorID</DataField>
-				</Field>
-				<Field Name="SecondaryDistributorID">
-					<DataField>SecondaryDistributorID</DataField>
-				</Field>
-				<Field Name="SalesRepID">
-					<DataField>SalesRepID</DataField>
-				</Field>
-				<Field Name="BusinessSegmentID">
-					<DataField>BusinessSegmentID</DataField>
-				</Field>
-				<Field Name="SubChanelID">
-					<DataField>SubChanelID</DataField>
-				</Field>
-				<Field Name="Classification">
-					<DataField>Classification</DataField>
-				</Field>
-				<Field Name="ExternalID">
-					<DataField>ExternalID</DataField>
-				</Field>
-				<Field Name="TeritoryID">
-					<DataField>TeritoryID</DataField>
-				</Field>
-				<Field Name="Status">
-					<DataField>Status</DataField>
-				</Field>
-				<Field Name="SEMID">
-					<DataField>SEMID</DataField>
-				</Field>
-				<Field Name="CreatedBy">
-					<DataField>CreatedBy</DataField>
-				</Field>
-				<Field Name="CreatedOn">
-					<DataField>CreatedOn</DataField>
-				</Field>
-				<Field Name="ModifiedBy">
-					<DataField>ModifiedBy</DataField>
-				</Field>
-				<Field Name="ModifiedOn">
-					<DataField>ModifiedOn</DataField>
+				<Field Name="NAME">
+					<DataField>NAME</DataField>
 				</Field>
 			</Fields>
 			<Query>
-				<CommandText>select *
-from Outlet</CommandText>
+				<CommandText> Select RBDCODE,Name from Ad_Geo_RBD</CommandText>
 				<DataSourceName>DataSource1</DataSourceName>
-				<QueryParameters>
-					<QueryParameter Name="ReportParameter1">
-						<Value>=Fields!ReportParameter1.Value</Value>
-					</QueryParameter>
-				</QueryParameters>
 			</Query>
 		</DataSet>
 	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
 </Report>

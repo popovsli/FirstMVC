@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<Body>
+		<Height>2in</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>Outlets</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.5in</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>OutletID</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>CustomerID</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>Name</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.5in</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!OutletID.Value</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!CustomerID.Value</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!Name.Value</Value>
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Footer>
+					<TableRows>
+						<TableRow>
+							<Height>0.5in</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Footer>
+				<Height>1.5in</Height>
+				<Left>0.25in</Left>
+				<Style />
+				<TableColumns>
+					<TableColumn>
+						<Width>1.875in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.875in</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.875in</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.25in</Top>
+				<Width>5.625in</Width>
+			</Table>
+		</ReportItems>
+		<Style />
+	</Body>
+	<BottomMargin>1in</BottomMargin>
+	<LeftMargin>1in</LeftMargin>
+	<PageHeight>11in</PageHeight>
+	<PageWidth>8.5in</PageWidth>
+	<RightMargin>1in</RightMargin>
+	<TopMargin>1in</TopMargin>
+	<Width>6.5in</Width>
+	<ReportParameters>
+		<ReportParameter Name="OutletID">
+			<DataType>Integer</DataType>
+			<Prompt>OutletID</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="DataSource1">
+			<ConnectionProperties>
+				<ConnectString>password=sd;data source=tlsql2014;initial catalog=SpecialDeals;user id=sd;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="Outlets">
+			<Fields>
+				<Field Name="OutletID">
+					<DataField>OutletID</DataField>
+				</Field>
+				<Field Name="CustomerID">
+					<DataField>CustomerID</DataField>
+				</Field>
+				<Field Name="Name">
+					<DataField>Name</DataField>
+				</Field>
+				<Field Name="City">
+					<DataField>City</DataField>
+				</Field>
+				<Field Name="PostalCode">
+					<DataField>PostalCode</DataField>
+				</Field>
+				<Field Name="Street">
+					<DataField>Street</DataField>
+				</Field>
+				<Field Name="StreetNumber">
+					<DataField>StreetNumber</DataField>
+				</Field>
+				<Field Name="HousingComplex">
+					<DataField>HousingComplex</DataField>
+				</Field>
+				<Field Name="Building">
+					<DataField>Building</DataField>
+				</Field>
+				<Field Name="Entrance">
+					<DataField>Entrance</DataField>
+				</Field>
+				<Field Name="Floor">
+					<DataField>Floor</DataField>
+				</Field>
+				<Field Name="State">
+					<DataField>State</DataField>
+				</Field>
+				<Field Name="CompositeAddress">
+					<DataField>CompositeAddress</DataField>
+				</Field>
+				<Field Name="Phone">
+					<DataField>Phone</DataField>
+				</Field>
+				<Field Name="Mobile">
+					<DataField>Mobile</DataField>
+				</Field>
+				<Field Name="Email">
+					<DataField>Email</DataField>
+				</Field>
+				<Field Name="Web">
+					<DataField>Web</DataField>
+				</Field>
+				<Field Name="Latitude">
+					<DataField>Latitude</DataField>
+				</Field>
+				<Field Name="Longitude">
+					<DataField>Longitude</DataField>
+				</Field>
+				<Field Name="PrimaryDistributorID">
+					<DataField>PrimaryDistributorID</DataField>
+				</Field>
+				<Field Name="SecondaryDistributorID">
+					<DataField>SecondaryDistributorID</DataField>
+				</Field>
+				<Field Name="SalesRepID">
+					<DataField>SalesRepID</DataField>
+				</Field>
+				<Field Name="BusinessSegmentID">
+					<DataField>BusinessSegmentID</DataField>
+				</Field>
+				<Field Name="SubChanelID">
+					<DataField>SubChanelID</DataField>
+				</Field>
+				<Field Name="Classification">
+					<DataField>Classification</DataField>
+				</Field>
+				<Field Name="ExternalID">
+					<DataField>ExternalID</DataField>
+				</Field>
+				<Field Name="TeritoryID">
+					<DataField>TeritoryID</DataField>
+				</Field>
+				<Field Name="Status">
+					<DataField>Status</DataField>
+				</Field>
+				<Field Name="SEMID">
+					<DataField>SEMID</DataField>
+				</Field>
+				<Field Name="CreatedBy">
+					<DataField>CreatedBy</DataField>
+				</Field>
+				<Field Name="CreatedOn">
+					<DataField>CreatedOn</DataField>
+				</Field>
+				<Field Name="ModifiedBy">
+					<DataField>ModifiedBy</DataField>
+				</Field>
+				<Field Name="ModifiedOn">
+					<DataField>ModifiedOn</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from Outlet
+where OutletID = @OutletID</CommandText>
+				<DataSourceName>DataSource1</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="OutletID">
+						<Value>=Parameters!OutletID.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

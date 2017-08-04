@@ -42,12 +42,12 @@ namespace FirstMVC
                 //Clear the last error on the server so that custom errors are not fired
                 Server.ClearError();
                 //forward the user to the error manager controller.
-                IController errorController = new ErrorManagerController();
-                RouteData routeData = new RouteData();
-                routeData.Values["controller"] = "ErrorManagerController";
-                routeData.Values["action"] = "ServerError";
-                errorController.Execute(
-                new RequestContext(new HttpContextWrapper(appContext), routeData));
+                //IController errorController = new ErrorManagerController();
+                //RouteData routeData = new RouteData();
+                //routeData.Values["controller"] = "ErrorManagerController";
+                //routeData.Values["action"] = "ServerError";
+                //errorController.Execute(
+                //new RequestContext(new HttpContextWrapper(appContext), routeData));
             }
         }
 

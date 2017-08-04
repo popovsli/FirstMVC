@@ -1,24 +1,99 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    flex: none;
+}
+
+main {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    flex: auto;
+}
+
+
+/**
+ * Non-essential styling
+ */
+
+body {
+    font-family: monospace;
+    line-height: 1.5;
+    color: #555;
+    background-color: #fff;
+}
+
+    body > * {
+        padding: 10px 15px;
+    }
+
+header,
+footer {
+    background-color: #ddd;
+        padding: 1em;
+}
+
+header {
+    text-align: right;
+}
+
+footer {
+    text-align: center;
+}
+
+
+
+/*/* Set padding to keep content from hitting the edges */
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+/*.dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/*/
+
+/*.content{
+    height:900px;
+}*/
+
+/*.header {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    text-align: right;
+    padding: 1em;
 }
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: silver;
+    text-align: center;
+    color: darkcyan;
+    border: 1px solid gray;
+}*/
+

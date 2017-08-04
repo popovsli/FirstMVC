@@ -17,8 +17,9 @@ namespace FirstMVC.Filters
                 BaseViewModel bvm = viewResult.Model as BaseViewModel;
                 if (bvm != null)//bvm will be null when we want a view without Header and footer
                 {
-                    bvm.UserName = HttpContext.Current.User.Identity.Name;
                     bvm.FooterData = new FooterViewModel();
+                    bvm.HeaderData = new HeaderViewModel();
+                    bvm.HeaderData.UserName = HttpContext.Current.User.Identity.Name;
                     bvm.FooterData.CompanyName = "StepByStepSchools";//Can be set to dynamic value
                     bvm.FooterData.Year = DateTime.Now.Year.ToString();
                 }
