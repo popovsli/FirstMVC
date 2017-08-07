@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
 	<Body>
 		<ColumnSpacing>0cm</ColumnSpacing>
-		<Height>4.4cm</Height>
+		<Height>2.2cm</Height>
 		<ReportItems>
 			<Tablix Name="Tablix1">
 				<TablixCorner>
@@ -385,8 +385,8 @@
 					</TablixMembers>
 				</TablixRowHierarchy>
 				<DataSetName>DataSet1</DataSetName>
-				<Top>1cm</Top>
-				<Left>1cm</Left>
+				<Top>0.1322917cm</Top>
+				<Left>0.02645833cm</Left>
 				<Height>2cm</Height>
 				<Width>24.2cm</Width>
 				<Style />
@@ -394,10 +394,13 @@
 		</ReportItems>
 		<Style />
 	</Body>
-	<LeftMargin>1in</LeftMargin>
-	<PageHeight>8.5in</PageHeight>
-	<PageWidth>11in</PageWidth>
-	<Width>29.7cm</Width>
+	<BottomMargin>1cm</BottomMargin>
+	<LeftMargin>1cm</LeftMargin>
+	<PageHeight>21cm</PageHeight>
+	<PageWidth>29.7cm</PageWidth>
+	<RightMargin>1cm</RightMargin>
+	<TopMargin>1cm</TopMargin>
+	<Width>29.8cm</Width>
 	<DataSources>
 		<DataSource Name="DataSource1">
 			<ConnectionProperties>

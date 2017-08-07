@@ -49,6 +49,7 @@
                 reportService: {
                     url: '../ActiveReports.ReportService.asmx'
                 },
+                localeUri: '../Scripts/HTML5Viewer/Localeuri.txt',
                 documentLoaded: function () {
                     console.log(viewer.pageCount);
                 },
@@ -75,8 +76,8 @@
 @section ContentBody{
 
     <input type="number" id="Param" name="Param" value="" />
-    <div class="container">
+    @*<div class="container">*@
         <div id="paginator" class="pagination"></div>
         <div id="viewer" style="width: 100%; height: 600px"></div>
-    </div>
+    @*</div>*@
 }

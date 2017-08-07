@@ -1,23 +1,23 @@
-﻿sidebar=Sidebar
+﻿sidebar=Страничната лента
 toc=TOC
 tocfull=Table of Contents
-firstPage=First
-lastPage=Last
-prevPage=Prev
-nextPage=Next
-print=Print
+firstPage=Първа
+lastPage=Последна
+prevPage=Предишна
+nextPage=Следваща
+print=Принтирай
 backToParent=Back to Parent
 params=Parameters
-saveas=Save As...
-renderMode=Change render mode
-Galley=Galley
+saveas=Запази като...
+renderMode=Странициране
+Galley=Галерия
 Paginated=Paginated
 	
 pdfDocument=PDF Документ
-wordDocument=Word Document
-imageFile=Image File
-mhtDocument=MHTML Web Archives
-excelWorkbook=Excel Workbook
+wordDocument=Word Документ
+imageFile=Картинка
+mhtDocument=MHTML Web Архив
+excelWorkbook=Excel Документ
 
 yes=Yes
 no=No
@@ -36,13 +36,13 @@ empty=Empty
 back=Back
 refreshReport=View report
 
-search=Search
-matchCase=Match case
-wholePhrase=Whole phrase
-more=More...
-noResults=No results
-clear=Clear
-findLabel=Find:
+search=Търсене
+matchCase=Малки/Големи букви
+wholePhrase=Цяла фраза
+more=Още...
+noResults=Няма намерен резултат
+clear=Изчисти
+findLabel=Търсене:
 
 errorPane.Details=Show details
 errorPane.HideDetails=Hide details

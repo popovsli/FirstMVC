@@ -6,7 +6,7 @@
 <html>
 <head>
     @Styles.Render("~/Content/Site.css")
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
 
     <meta name="viewport" content="width=device-width" />
     <title>@RenderSection("TitleSection")</title>
@@ -14,9 +14,8 @@
 </head>
 <body>
     @Html.Partial("Header", Model.HeaderData)
-    <hr />
     <main>
-            @RenderSection("ContentBody")
+        @RenderSection("ContentBody")
     </main>
     @Html.Partial("Footer", Model.FooterData)
 </body>
