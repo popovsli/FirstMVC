@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FirstMVC.CustomActionResults
+namespace FirstMVC.Utils.CustomActionResults
 {
     public class CustomResult<T> : ActionResult
     {

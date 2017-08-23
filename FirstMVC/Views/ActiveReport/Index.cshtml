@@ -1,4 +1,6 @@
-﻿
+﻿@using FirstMVC.Controllers
+@model TestViewModel
+
 @section TitleSection{
     ActiveReports
 }
@@ -38,23 +40,27 @@
         //    }
         //});
 
+        //url: '../ActiveReports.ReportService.asmx'
+        @*var model = @Html.Raw(Json.Encode(Model));
+        console.log(model.Path);*@
 
+        var viewer;
         $(function () {
-            var viewer = GrapeCity.ActiveReports.Viewer(
-            {
-                element: '#viewer',
-                report: {
-                    id: "Reports/VODITE.rdlx",
-                },
-                reportService: {
-                    url: '../ActiveReports.ReportService.asmx'
-                },
-                localeUri: '../Scripts/HTML5Viewer/Localeuri.txt',
-                documentLoaded: function () {
-                    console.log(viewer.pageCount);
-                },
-                uiType: 'desktop'
-            });
+            viewer = GrapeCity.ActiveReports.Viewer(
+           {
+               element: '#viewer',
+               report: {
+                   id: "Reports/VODITE.rdlx",
+               },
+               reportService: {
+                   url: '../ActiveReports.ReportService.asmx'
+               },
+               localeUri: '../Scripts/HTML5Viewer/Localeuri.txt',
+               documentLoaded: function () {
+                   console.log(viewer.pageCount);
+               },
+               uiType: 'desktop'
+           });
 
             $('#Param').on('input', function () {
                 var outletID = $("#Param").val();
@@ -65,9 +71,25 @@
                     parameters: [{ name: 'OutletID', value: outletID }]
                 };
 
-                viewer.option("report", reportOption);
+                // viewer.option("report", reportOption);
             })
         });
+
+        function exportToExcel() {
+            viewer.export('Xls', downloadReport, true, { FileName: "DefaultName" });
+        }
+        // function fetches the report from uri(callback function)
+        var downloadReport = function (uri) {
+            var newWin = null;
+            // open uri in new window
+            try {
+                newWin = window.open(uri);
+            } catch (e) { }
+            // if browser rejects opening new window, open uri in current window
+            if (!newWin) {
+                window.location = uri;
+            }
+        };
 
     </script>
 
@@ -75,9 +97,10 @@
 
 @section ContentBody{
 
-    <input type="number" id="Param" name="Param" value="" />
+    @*<input type="number" id="Param" name="Param" value="" />*@
+    <button onclick="exportToExcel()"> asd </button>
     @*<div class="container">*@
-        <div id="paginator" class="pagination"></div>
-        <div id="viewer" style="width: 100%; height: 600px"></div>
+    <div id="paginator" class="pagination"></div>
+    <div id="viewer" style="width: 100%; height: 600px"></div>
     @*</div>*@
 }

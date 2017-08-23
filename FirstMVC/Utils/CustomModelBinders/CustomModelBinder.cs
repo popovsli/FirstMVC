@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FirstMVC.CustomModelBinders
+namespace FirstMVC.Utils.CustomModelBinders
 {
     /// <summary>
     /// Create custom model binder

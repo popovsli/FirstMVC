@@ -1,4 +1,4 @@
-﻿using FirstMVC.Filters;
+﻿using FirstMVC.Utils.Filters;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +11,7 @@ namespace FirstMVC
         {
             //filters.Add(new HandleErrorAttribute());//ExceptionFilter
             filters.Add(new LoggerExceptionFilter());
+
             ////In that case we have to specify view name while attaching HandlError filter. 
             //filters.Add(new HandleErrorAttribute()
             //{

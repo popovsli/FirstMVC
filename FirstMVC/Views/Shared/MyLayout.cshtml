@@ -6,9 +6,14 @@
 <html>
 <head>
     @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/bundles/jquery")
+
+    <link rel="stylesheet" href="~/Content/normalize.min.css">
+
     @*@Styles.Render("~/Content/css")*@
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>@RenderSection("TitleSection")</title>
     @RenderSection("HeaderSection", false)
 </head>

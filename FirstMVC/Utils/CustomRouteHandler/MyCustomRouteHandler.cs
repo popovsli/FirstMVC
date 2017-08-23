@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FirstMVC.CustomRouteHandler
+namespace FirstMVC.Utils.CustomRouteHandler
 {
     /// <summary>
     /// Overriding default Route handler

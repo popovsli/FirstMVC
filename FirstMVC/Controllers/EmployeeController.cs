@@ -1,12 +1,11 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
-using FirstMVC.Filters;
+using FirstMVC.Utils.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using ViewModel;
@@ -18,6 +17,7 @@ namespace FirstMVC.Controllers
     {
         //[OutputCache(Duration = 15, Location = System.Web.UI.OutputCacheLocation.Any)]
         [HeaderFooterFilter]
+        //[Route("Employee/List")]
         //[Authorize] //At Action level
         public ActionResult Index()
         {

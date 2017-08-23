@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ViewModel;
 
-namespace FirstMVC.Filters
+namespace FirstMVC.Utils.Filters
 {
     public class HeaderFooterFilter : ActionFilterAttribute
     {

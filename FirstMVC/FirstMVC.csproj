@@ -44,15 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GrapeCity.ActiveReports.Chart.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Diagnostics.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Document.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Export.Html.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Export.Image.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Export.Pdf.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Extensibility.v11" />
-    <Reference Include="GrapeCity.ActiveReports.v11" />
-    <Reference Include="GrapeCity.ActiveReports.Web.v11" />
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -172,6 +163,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ErrorManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Utils\Cryptography\Hashing.cs" />
     <Compile Include="Utils\Cryptography\RijndaelAlgorithm.cs" />
     <Compile Include="Utils\CustomActionResults\CustomResult.cs" />
@@ -183,11 +175,11 @@
     <Compile Include="Utils\CustomViewEngine\MyCustomViewEngine.cs" />
     <Compile Include="Utils\Extensions\CustomHelperMethods.cs" />
     <Compile Include="Utils\Filters\AdminFilter.cs" />
-    <Compile Include="Utils\Filters\EmployeeExceptionFilter.cs" />
     <Compile Include="Utils\Filters\HeaderFooterFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Filters\LoggerExceptionFilter.cs" />
     <Compile Include="Utils\Logger\FileLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -198,6 +190,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GrapeCity.ActiveReports.Viewer.Html.css" />
+    <Content Include="Content\normalize.min.css" />
     <Content Include="Content\theme-cosmo.css" />
     <Content Include="Content\theme-cosmo2.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -255,11 +248,6 @@
     <Content Include="Areas\SPA\Views\Main\EmployeeList.cshtml" />
     <Content Include="Areas\SPA\Views\Main\CreateEmployee.cshtml" />
     <Content Include="Areas\SPA\Views\SPABulkUpload\SpaBulkUpload.cshtml" />
-    <Content Include="Reports\OutletActiveReports.rdlx" />
-    <Content Include="Reports\OutletIDParam.rdlx" />
-    <Content Include="Reports\SpecialDeal.rdsx" />
-    <Content Include="Reports\OutletIDParamNew.rdlx" />
-    <Content Include="Reports\VODITE.rdlx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -323,12 +311,17 @@
     <Folder Include="Views\ErrorManager\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ActiveReportLibrary\ActiveReportLibrary.csproj">
+      <Project>{8eda2db7-138a-4c97-be37-3cc2077eba2f}</Project>
+      <Name>ActiveReportLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
       <Project>{ca956c85-41bc-4911-94d0-c7565e43900c}</Project>
       <Name>BusinessEntities</Name>

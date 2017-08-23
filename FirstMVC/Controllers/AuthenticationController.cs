@@ -1,12 +1,12 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
 using FirstMVC.Cryptography;
-using FirstMVC.Filters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Web;
@@ -70,7 +70,7 @@ namespace FirstMVC.Controllers
                 return View("Login");
             }
         }
-               
+
         /// <summary>
         /// Creating authorization cookies, this method is as SetAuthCookie()
         /// </summary>
@@ -90,7 +90,7 @@ namespace FirstMVC.Controllers
             HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket); //FormsAuthentication.FormsCookieName
             System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
         }
-      
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

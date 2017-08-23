@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FirstMVC.CustomViewEngine
+namespace FirstMVC.Utils.CustomViewEngine
 {
     public class MyCustomViewEngine : VirtualPathProviderViewEngine
     {
