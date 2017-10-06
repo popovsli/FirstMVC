@@ -277,6 +277,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TestScript.js" />
     <Content Include="Scripts\Validations.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -302,6 +303,7 @@
     <Content Include="Views\BulkUpload\Index.cshtml" />
     <Content Include="Views\ActiveReport\Index.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,7 +313,6 @@
     <Folder Include="Views\ErrorManager\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
