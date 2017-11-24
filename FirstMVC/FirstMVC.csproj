@@ -164,7 +164,6 @@
     <Compile Include="Controllers\ErrorManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="removeme.cs" />
     <Compile Include="Utils\Cryptography\Hashing.cs" />
     <Compile Include="Utils\Cryptography\RijndaelAlgorithm.cs" />
     <Compile Include="Utils\CustomActionResults\CustomResult.cs" />
