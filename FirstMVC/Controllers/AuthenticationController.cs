@@ -23,7 +23,7 @@ namespace FirstMVC.Controllers
         {
             //Chack browser cababilities
             var browser = Request.Browser;
-
+          
             CultureInfo uiCulture = Thread.CurrentThread.CurrentUICulture;
             return View();
         }

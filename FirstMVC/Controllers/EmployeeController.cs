@@ -21,6 +21,12 @@ namespace FirstMVC.Controllers
         //[Authorize] //At Action level
         public ActionResult Index()
         {
+            //The System.Security.Principal.IPrincipal
+            //interface contains information about the user, including the user’s roles
+
+            //The IIdentity contains information about the users, such as whether they are
+            //authenticated and their name.
+
             IPrincipal usr = System.Web.HttpContext.Current.User;
 
             //Get user Identity this work when using Windows authentication
