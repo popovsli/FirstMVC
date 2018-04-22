@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,6 +176,7 @@
     <Compile Include="Utils\CustomViewEngine\MyCustomViewEngine.cs" />
     <Compile Include="Utils\Extensions\CustomHelperMethods.cs" />
     <Compile Include="Utils\Filters\AdminFilter.cs" />
+    <Compile Include="Utils\Filters\AuthenticationFilter.cs" />
     <Compile Include="Utils\Filters\HeaderFooterFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

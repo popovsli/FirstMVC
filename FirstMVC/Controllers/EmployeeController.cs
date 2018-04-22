@@ -15,6 +15,7 @@ namespace FirstMVC.Controllers
     //[Authorize] //At controller level
     public class EmployeeController : Controller
     {
+        [AuthenticationFilter]
         //[OutputCache(Duration = 15, Location = System.Web.UI.OutputCacheLocation.Any)]
         [HeaderFooterFilter]
         //[Route("Employee/List")]
